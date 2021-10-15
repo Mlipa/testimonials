@@ -16,11 +16,10 @@ body {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+    display: flex;
+    flex-direction: column;
     margin: 64px;
     font-family: 'Barlow Semi Condensed', sans-serif;
-    gap: 32px;
 }
 
 .container-buttons {
@@ -46,15 +45,9 @@ main {
 
 .section-primary {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+	grid-template-columns: repeat( auto-fit, minmax( 450px, 1fr ) );
     gap: 32px;
-}
-
-.section-secundary {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 32px;
-    margin-top: 32px;
+    grid-auto-flow: dense;
 }
 
 .card-violet {
@@ -95,24 +88,15 @@ main {
     justify-content: space-between;
 }
 
-.dates-header-long {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
+.dates-header {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
 }
 
-.dates-header-short {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
-
-.dates-header-long img {
+.dates-header img {
     border-radius: 50%;
     border-color: 1px solid var(--Moderate-violet);
-    height: 40px;
-}
-
-.dates-header-short img {
-    border-radius: 50%;
     height: 40px;
 }
 
